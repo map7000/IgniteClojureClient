@@ -1,0 +1,1 @@
+{:deps {org.apache.ignite/ignite-core {:mvn/version "2.8.0"}}}
