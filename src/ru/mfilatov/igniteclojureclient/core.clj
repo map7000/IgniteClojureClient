@@ -1,6 +1,6 @@
 (ns ru.mfilatov.igniteclojureclient.core
     (:import
-      (org.apache.ignite.configuration IgniteConfiguration BinaryConfiguration CacheConfiguration)
+      (org.apache.ignite.configuration IgniteConfiguration BinaryConfiguration CacheConfiguration ClientConfiguration)
       (org.apache.ignite.spi.discovery.tcp TcpDiscoverySpi)
       (org.apache.ignite.spi.discovery.tcp.ipfinder.vm TcpDiscoveryVmIpFinder)
       (org.apache.ignite.cache CacheAtomicityMode CacheMode CacheWriteSynchronizationMode)))
@@ -30,4 +30,9 @@
            (.setBackups config backups)
            (.setReadFromBackup config read-from-backups)
            (.setWriteSynchronizationMode config cache-write-sync-mode)
+           config))
+
+(defn client-config [servers]
+      (let [config (ClientConfiguration.)]
+           (.setAddresses config servers)
            config))
