@@ -7,7 +7,7 @@
 
 (def accounts 10)
 (def account-balance 100)
-(def addresses (list "45.143.94.146"))
+(def addresses (list "10.10.0.250"))
 (def cache-name "ACCOUNTS")
 (def amount 3)
 (def n 10)
